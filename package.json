@@ -1,13 +1,17 @@
 {
   "name": "gamblecodez-bitsler",
   "version": "1.0.0",
-  "description": "",
+  "description": "GambleCodez Bitsler frontend with simple admin login panel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "keywords": ["gamblecodez", "bitsler", "fly.io"],
+  "author": "GambleCodez",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.4"
+  }
 }
