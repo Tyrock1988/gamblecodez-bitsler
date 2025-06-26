@@ -2,11 +2,10 @@ app = "gamblecodez-bitsler"
 org = "Tyrock1988"
 
 [build]
-  # Use remote build for Termux compatibility
   remote = true
 
 [env]
-  # Add environment variables here if needed
+  NODE_ENV = "production"
 
 [deploy]
   strategy = "rolling"
