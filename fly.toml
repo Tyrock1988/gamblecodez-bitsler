@@ -1,15 +1,13 @@
-app = "your-app-name"
+app = "gamblecodez-bitsler"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
 [build]
-  builder = "heroku/buildpacks:20"
+  image = "node:18"
 
 [env]
   NODE_ENV = "production"
-
-[deploy]
-  release_command = "npm run migrate" # if you have migrations, else remove
+  TELEGRAM_BOT_TOKEN = "change_this_in_fly_secrets"
 
 [[services]]
   internal_port = 3000
@@ -20,7 +18,9 @@ kill_timeout = 5
     soft_limit = 20
 
   [[services.ports]]
+    handlers = ["http"]
     port = 80
 
   [[services.ports]]
+    handlers = ["tls", "http"]
     port = 443
