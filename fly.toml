@@ -7,7 +7,13 @@ kill_timeout = 5
 
 [env]
   NODE_ENV = "production"
-  TELEGRAM_BOT_TOKEN = "change_this_in_fly_secrets"
+  TELEGRAM_BOT_TOKEN = "set_via_fly_secrets"
+  ADMIN_USER = "set_via_fly_secrets"
+  ADMIN_PASS = "set_via_fly_secrets"
+
+[[mounts]]
+  source = "gamblecodez-data"
+  destination = "/data"      # <-- this folder will persist
 
 [[services]]
   internal_port = 3000
