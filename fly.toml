@@ -1,16 +1,11 @@
-app = "gamblecodez"
-kill_signal = "SIGINT"
-kill_timeout = 5
-
 [build]
   image = "node:18"
 
 [env]
   NODE_ENV = "production"
-  PORT = "3000"
   TELEGRAM_BOT_TOKEN = "set_via_fly_secrets"
-  ADMIN_USER = "set_via_fly_secrets"
-  ADMIN_PASS = "set_via_fly_secrets"
+  ADMIN_USER = "Admin"
+  ADMIN_PASS = "Pink2222"
 
 [deploy]
   release_command = "bash ./build.sh"
