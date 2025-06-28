@@ -1,31 +1,21 @@
-[build]
-  image = "node:18"
+# fly.toml app configuration file generated for gamblecodez on 2025-06-28T09:08:20Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[env]
-  NODE_ENV = "production"
-  TELEGRAM_BOT_TOKEN = "set_via_fly_secrets"
-  ADMIN_USER = "Admin"
-  ADMIN_PASS = "Pink2222"
+app = 'gamblecodez'
+primary_region = 'dfw'
 
-[deploy]
-  release_command = "bash ./build.sh"
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
 
-[[mounts]]
-  source = "gamblecodez-data"
-  destination = "/data"
-
-[[services]]
-  internal_port = 3000
-  protocol = "tcp"
-
-  [services.concurrency]
-    hard_limit = 25
-    soft_limit = 20
-
-  [[services.ports]]
-    handlers = ["http"]
-    port = 80
-
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
