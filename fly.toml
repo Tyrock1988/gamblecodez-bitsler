@@ -7,13 +7,17 @@ kill_timeout = 5
 
 [env]
   NODE_ENV = "production"
+  PORT = "3000"
   TELEGRAM_BOT_TOKEN = "set_via_fly_secrets"
   ADMIN_USER = "set_via_fly_secrets"
   ADMIN_PASS = "set_via_fly_secrets"
 
+[deploy]
+  release_command = "bash ./build.sh"
+
 [[mounts]]
   source = "gamblecodez-data"
-  destination = "/data"      # <-- this folder will persist
+  destination = "/data"
 
 [[services]]
   internal_port = 3000
