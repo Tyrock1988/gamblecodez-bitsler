@@ -1,4 +1,4 @@
-app = "gamblecodez-bitsler"
+app = "gamblecodez"
 kill_signal = "SIGINT"
 kill_timeout = 5
 
